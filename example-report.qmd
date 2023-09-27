@@ -1,0 +1,141 @@
+---
+title: "NHS Workforce Statistics for `r params$ics_name`"
+subtitle: "Data for `r params$month_year`"
+author: "Maria Garcia"
+date: "2023-09-28"
+params:
+  ics_name: "Lancashire and South Cumbria"
+  month_year: "May 2023"
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-title: Contents
+    css: NHS_report_theme.css
+    title-block-banner: '#005EB8'
+    backgroundcolor: '#f0f4f5'
+    mainfont: 'Open Sans'
+execute:
+  echo: false
+  message: false
+  warning: false
+---
+
+```{r load libraries}
+library("bsicons")
+library("bslib")
+library("glue")
+library("gt")
+library("NHSRtheme")
+library("reactable")
+library("readxl")
+library("shiny")
+library("tidyverse")
+```
+
+```{r, read in data}
+filename = glue("NHS Workforce Statistics, {params$month_year} England and Organisation.xlsx")
+staff_group = read_xlsx(path = filename, sheet = "3. NHSE, Org & SG - FTE", skip = 5)
+time_series = read_xlsx(path = filename, sheet = "5. All Staff, NHSE & Org - FTE", skip = 4)
+```
+
+
+```{r tidy staff_group}
+staff_group = 
+  staff_group |>
+  fill(`ICS name`) |>
+  filter(`ICS name` == params$ics_name) |>
+  select(`Organisation name`, `Total`,
+         `HCHS Doctors`, `Nurses & health visitors`,
+         `Midwives`, `Ambulance staff`) |>
+  replace_na(list(`Organisation name` = "All"))
+```
+
+## Summary
+
+This report shows monthly numbers of NHS Hospital and Community Health Services (HCHS) staff working in NHS Trusts and other core organisations in `r params$ics_name`. 
+
+## Key facts
+
+```{r value boxes}
+total_fte = 
+  staff_group |>
+  filter(`Organisation name` == "All") |>
+  pull(Total) |> 
+  round() |>
+  prettyNum(big.mark = ",")
+
+value_box(
+  title = "All NHS Hospital & Community Health Service (HCHS) staff",
+  value = glue("{total_fte} FTE in {params$month_year}"),
+  showcase = bs_icon("hospital"),
+  theme = "primary"
+)
+```
+
+### Information `r bs_icon("info-circle")`
+*Full-Time Equivalent (FTE)* is a standardised measure of the workload of an employed person and allows for the total workforce workload to be expressed in an equivalent number of full-time staff. 1.0 FTE equates to full-time work of 37.5 hours per week.
+
+## Trends
+
+The graph below presents time series data for `r params$ics_name` from January 2022 to `r params$month_year`
+
+```{r tidy time_series}
+time_series = 
+  time_series |>
+  fill(`ICS name`) |>
+  filter(`ICS name` == params$ics_name) |>
+  select(-(`NHS England region code`:`ICS name`), -`Organisation code`) |>
+  pivot_longer(-`Organisation name`, names_to = "date", values_to = "count") |>
+  mutate(date = as.Date(as.numeric(date), origin = "1899-12-30")) |> 
+  filter(!is.na(`Organisation name`))
+```
+
+```{r plot}
+# Three biggest organisations
+
+biggest_orgs = 
+  time_series |> 
+  filter(date == max(date)) |>
+  slice_max(n = 3, `count`) |>
+  pull(`Organisation name`)
+
+plot = 
+  time_series |>
+  filter(`Organisation name` %in% biggest_orgs) |>
+  filter(date > "2021-12-01") |>
+  ggplot(aes(x = date, y = count, colour = `Organisation name`)) + 
+  geom_point() + 
+  geom_line() +
+  scale_colour_nhs() +
+  theme_minimal() + 
+  xlab("FTE staff") +
+  ylim("")
+
+plotly::ggplotly(plot)
+```
+
+## Table
+
+```{r most_midwives}
+max_midwives = 
+  staff_group |>
+  filter(`Organisation name` != "All") |>
+  slice_max(`Midwives`, n = 1) 
+```
+
+The table below shows the total number of doctors and nurses for each organisation within `r params$ics_name`. We can see that the organisation with the most midwives is the _`r pull(max_midwives, "Organisation name")`_ with `r round(max_midwives$Midwives)` staff.
+
+```{r table}
+staff_group |>
+  reactable(style = list(fontSize = "0.8rem"),
+            defaultColDef = colDef(
+              format = colFormat(digits = 0)
+            ),
+            columns = list(
+              `Organisation name` = colDef(minWidth = 140)  
+            ),
+            bordered = TRUE,
+            highlight = TRUE) 
+```
+

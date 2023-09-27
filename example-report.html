@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Maria Garcia">
+<meta name="dcterms.date" content="2023-09-28">
+
+<title>NHS Workforce Statistics for Lancashire and South Cumbria</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="example-report_files/libs/clipboard/clipboard.min.js"></script>
+<script src="example-report_files/libs/quarto-html/quarto.js"></script>
+<script src="example-report_files/libs/quarto-html/popper.min.js"></script>
+<script src="example-report_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="example-report_files/libs/quarto-html/anchor.min.js"></script>
+<link href="example-report_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="example-report_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="example-report_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="example-report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="example-report_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<style>
+    .quarto-title-block .quarto-title-banner,
+    .quarto-title-block .quarto-title-banner h1,
+    .quarto-title-block .quarto-title-banner h2,
+    .quarto-title-block .quarto-title-banner h3,
+    .quarto-title-block .quarto-title-banner h4,
+    .quarto-title-block .quarto-title-banner h5,
+    .quarto-title-block .quarto-title-banner h6
+    {
+      background: #005EB8;
+    }
+    </style>
+
+<link href="example-report_files/libs/htmltools-fill-0.5.6.9000/fill.css" rel="stylesheet">
+<link href="example-report_files/libs/bslib-value_box-styles-0.5.1.9000/value_box.css" rel="stylesheet">
+<script>(function() {
+          function insert_svg() {
+            var temp = document.createElement('div');
+            temp.innerHTML = `<svg aria-hidden="true" focusable="false" style="width:0;height:0;position:absolute;">
+  <!-- ref: https://fvsch.com/svg-gradient-fill -->
+  <linearGradient id='bslib---icon-gradient' x1='0' y1='0' x2='1.6' y2='2.4'>
+    <stop offset='0%' stop-color='var(--bslib-icon-gradient-0, #007bc2)' />
+    <stop offset='14.29%' stop-color='var(--bslib-icon-gradient-1, #0770c9)' />
+    <stop offset='28.57%' stop-color='var(--bslib-icon-gradient-2, #0d63da)' />
+    <stop offset='42.86%' stop-color='var(--bslib-icon-gradient-3, #2b4af9)' />
+    <stop offset='57.14%' stop-color='var(--bslib-icon-gradient-4, #5e29f7)' />
+    <stop offset='71.43%' stop-color='var(--bslib-icon-gradient-5, #7217d7)' />
+    <stop offset='100%' stop-color='var(--bslib-icon-gradient-6, #74149c)' />
+  </linearGradient>
+</svg>
+`;
+            document.body.appendChild(temp.firstChild);
+          }
+          if (document.readyState === 'complete') {
+            insert_svg();
+          } else {
+            document.addEventListener('DOMContentLoaded', insert_svg);
+          }
+        })()</script>
+<script src="example-report_files/libs/bslib-card-js-0.5.1.9000/card.min.js"></script>
+<link href="example-report_files/libs/bslib-card-styles-0.5.1.9000/card.css" rel="stylesheet">
+<script src="example-report_files/libs/bslib-tag-require-0.5.1.9000/tag-require.js"></script>
+<script src="example-report_files/libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+<script src="example-report_files/libs/plotly-binding-4.10.1/plotly.js"></script>
+<script src="example-report_files/libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="example-report_files/libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="example-report_files/libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="example-report_files/libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="example-report_files/libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="example-report_files/libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+<script src="example-report_files/libs/core-js-2.5.3/shim.min.js"></script>
+<script src="example-report_files/libs/react-17.0.0/react.min.js"></script>
+<script src="example-report_files/libs/react-17.0.0/react-dom.min.js"></script>
+<script src="example-report_files/libs/reactwidget-1.0.0/react-tools.js"></script>
+<link href="example-report_files/libs/reactable-0.4.3/reactable.css" rel="stylesheet">
+<script src="example-report_files/libs/reactable-binding-0.4.3/reactable.js"></script>
+
+
+<link rel="stylesheet" href="NHS_report_theme.css">
+</head>
+
+<body>
+
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">NHS Workforce Statistics for Lancashire and South Cumbria</h1>
+            <p class="subtitle lead">Data for May 2023</p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Maria Garcia </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">September 28, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#key-facts" id="toc-key-facts" class="nav-link" data-scroll-target="#key-facts">Key facts</a>
+  <ul class="collapse">
+  <li><a href="#information" id="toc-information" class="nav-link" data-scroll-target="#information">Information <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16" class="bi bi-info-circle " style="height:1em;width:1em;fill:currentColor;vertical-align:-0.125em;" aria-hidden="true" role="img"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path> <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path></svg></a></li>
+  </ul></li>
+  <li><a href="#trends" id="toc-trends" class="nav-link" data-scroll-target="#trends">Trends</a></li>
+  <li><a href="#table" id="toc-table" class="nav-link" data-scroll-target="#table">Table</a></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>This report shows monthly numbers of NHS Hospital and Community Health Services (HCHS) staff working in NHS Trusts and other core organisations in Lancashire and South Cumbria.</p>
+</section>
+<section id="key-facts" class="level2">
+<h2 class="anchored" data-anchor-id="key-facts">Key facts</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="card bslib-card bslib-mb-spacing html-fill-item html-fill-container bslib-value-box bg-primary showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card() value_box()" data-require-bs-version="5 5">
+<div class="card-body bslib-gap-spacing html-fill-item html-fill-container" style="margin-top:auto;margin-bottom:auto;flex:1 1 auto; padding:0;">
+<div class="value-box-grid html-fill-item" style="--bslib-grid-height:auto;--bslib-grid-height-mobile:auto;---bslib-value-box-showcase-w:30%;---bslib-value-box-showcase-w-fs:1fr;---bslib-value-box-showcase-max-h:100px;---bslib-value-box-showcase-max-h-fs:67%;">
+<div class="value-box-showcase html-fill-item html-fill-container"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16" class="bi bi-hospital " style="height:1em;width:1em;fill:currentColor;vertical-align:-0.125em;" aria-hidden="true" role="img"><path d="M8.5 5.034v1.1l.953-.55.5.867L9 7l.953.55-.5.866-.953-.55v1.1h-1v-1.1l-.953.55-.5-.866L7 7l-.953-.55.5-.866.953.55v-1.1h1ZM13.25 9a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5ZM13 11.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5Zm.25 1.75a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5Zm-11-4a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 3 9.75v-.5A.25.25 0 0 0 2.75 9h-.5Zm0 2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5ZM2 13.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5Z"></path>
+<path d="M5 1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1a1 1 0 0 1 1 1v4h3a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h3V3a1 1 0 0 1 1-1V1Zm2 14h2v-3H7v3Zm3 0h1V3H5v12h1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3Zm0-14H6v1h4V1Zm2 7v7h3V8h-3Zm-8 7V8H1v7h3Z"></path></svg></div>
+<div class="value-box-area html-fill-item html-fill-container">
+<p class="value-box-title">All NHS Hospital &amp; Community Health Service (HCHS) staff</p>
+<div class="value-box-value html-fill-item html-fill-container">38,605 FTE in May 2023</div>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script>
+</div>
+</div>
+</div>
+<section id="information" class="level3">
+<h3 class="anchored" data-anchor-id="information">Information <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16" class="bi bi-info-circle " style="height:1em;width:1em;fill:currentColor;vertical-align:-0.125em;" aria-hidden="true" role="img"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path> <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path></svg></h3>
+<p><em>Full-Time Equivalent (FTE)</em> is a standardised measure of the workload of an employed person and allows for the total workforce workload to be expressed in an equivalent number of full-time staff. 1.0 FTE equates to full-time work of 37.5 hours per week.</p>
+</section>
+</section>
+<section id="trends" class="level2">
+<h2 class="anchored" data-anchor-id="trends">Trends</h2>
+<p>The graph below presents time series data for Lancashire and South Cumbria from January 2022 to May 2023</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6c77042851cd61f73bd6" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-6c77042851cd61f73bd6">{"x":{"data":[{"x":[18992,19023,19051,19082,19112,19143,19173,19204,19235,19265,19296,19326,19357,19388,19416,19447,19477,19508],"y":[6912.9383799999996,7012.9005200000001,7014.1312200000002,7040.4708899999996,7025.6442999999999,7048.65481,7053.3320000000003,7059.3724899999997,7072.6360000000004,7109.8606399999999,7158.6881199999998,7184.8118400000003,7187.4442399999998,7242.4965599999996,7270.6690500000004,7318.2590399999999,7328.6128600000002,7357.3597],"text":["date: 2021-12-31<br />count: 6912.938<br />Organisation name: Blackpool Teaching Hospitals NHS Foundation Trust","date: 2022-01-31<br />count: 7012.901<br />Organisation name: Blackpool Teaching Hospitals NHS Foundation Trust","date: 2022-02-28<br />count: 7014.131<br />Organisation name: Blackpool Teaching Hospitals NHS Foundation Trust","date: 2022-03-31<br />count: 7040.471<br />Organisation name: Blackpool Teaching Hospitals NHS Foundation Trust","date: 2022-04-30<br />count: 7025.644<br />Organisation name: Blackpool Teaching Hospitals NHS Foundation Trust","date: 2022-05-31<br />count: 7048.655<br />Organisation name: Blackpool Teaching Hospitals NHS Foundation Trust","date: 2022-06-30<br />count: 7053.332<br />Organisation name: Blackpool Teaching Hospitals NHS Foundation Trust","date: 2022-07-31<br />count: 7059.372<br />Organisation name: Blackpool Teaching Hospitals NHS Foundation Trust","date: 2022-08-31<br />count: 7072.636<br />Organisation name: Blackpool Teaching Hospitals NHS Foundation Trust","date: 2022-09-30<br />count: 7109.861<br />Organisation name: Blackpool Teaching Hospitals NHS Foundation Trust","date: 2022-10-31<br />count: 7158.688<br />Organisation name: Blackpool Teaching Hospitals NHS Foundation Trust","date: 2022-11-30<br />count: 7184.812<br />Organisation name: Blackpool Teaching Hospitals NHS Foundation Trust","date: 2022-12-31<br />count: 7187.444<br />Organisation name: Blackpool Teaching Hospitals NHS Foundation Trust","date: 2023-01-31<br />count: 7242.497<br />Organisation name: Blackpool Teaching Hospitals NHS Foundation Trust","date: 2023-02-28<br />count: 7270.669<br />Organisation name: Blackpool Teaching Hospitals NHS Foundation Trust","date: 2023-03-31<br />count: 7318.259<br />Organisation name: Blackpool Teaching Hospitals NHS Foundation Trust","date: 2023-04-30<br />count: 7328.613<br />Organisation name: Blackpool Teaching Hospitals NHS Foundation Trust","date: 2023-05-31<br />count: 7357.360<br />Organisation name: Blackpool Teaching Hospitals NHS Foundation Trust"],"type":"scatter","mode":"markers+lines","marker":{"autocolorscale":false,"color":"rgba(0,94,184,1)","opacity":1,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,94,184,1)"}},"hoveron":"points","name":"Blackpool Teaching Hospitals NHS Foundation Trust","legendgroup":"Blackpool Teaching Hospitals NHS Foundation Trust","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","line":{"width":1.8897637795275593,"color":"rgba(0,94,184,1)","dash":"solid"},"frame":null},{"x":[18992,19023,19051,19082,19112,19143,19173,19204,19235,19265,19296,19326,19357,19388,19416,19447,19477,19508],"y":[8473.3906900000002,8502.7389600000006,8541.5685099999992,8560.0006699999994,8513.6916399999991,8509.1130900000007,8514.5239399999991,8491.4296900000008,8524.9418399999995,8605.5574099999994,8688.5973699999995,8730.3332200000004,8660.6701300000004,8713.1248599999999,8796.8910599999999,8817.6308499999996,8802.0896699999994,8850.2505999999994],"text":["date: 2021-12-31<br />count: 8473.391<br />Organisation name: East Lancashire Hospitals NHS Trust","date: 2022-01-31<br />count: 8502.739<br />Organisation name: East Lancashire Hospitals NHS Trust","date: 2022-02-28<br />count: 8541.569<br />Organisation name: East Lancashire Hospitals NHS Trust","date: 2022-03-31<br />count: 8560.001<br />Organisation name: East Lancashire Hospitals NHS Trust","date: 2022-04-30<br />count: 8513.692<br />Organisation name: East Lancashire Hospitals NHS Trust","date: 2022-05-31<br />count: 8509.113<br />Organisation name: East Lancashire Hospitals NHS Trust","date: 2022-06-30<br />count: 8514.524<br />Organisation name: East Lancashire Hospitals NHS Trust","date: 2022-07-31<br />count: 8491.430<br />Organisation name: East Lancashire Hospitals NHS Trust","date: 2022-08-31<br />count: 8524.942<br />Organisation name: East Lancashire Hospitals NHS Trust","date: 2022-09-30<br />count: 8605.557<br />Organisation name: East Lancashire Hospitals NHS Trust","date: 2022-10-31<br />count: 8688.597<br />Organisation name: East Lancashire Hospitals NHS Trust","date: 2022-11-30<br />count: 8730.333<br />Organisation name: East Lancashire Hospitals NHS Trust","date: 2022-12-31<br />count: 8660.670<br />Organisation name: East Lancashire Hospitals NHS Trust","date: 2023-01-31<br />count: 8713.125<br />Organisation name: East Lancashire Hospitals NHS Trust","date: 2023-02-28<br />count: 8796.891<br />Organisation name: East Lancashire Hospitals NHS Trust","date: 2023-03-31<br />count: 8817.631<br />Organisation name: East Lancashire Hospitals NHS Trust","date: 2023-04-30<br />count: 8802.090<br />Organisation name: East Lancashire Hospitals NHS Trust","date: 2023-05-31<br />count: 8850.251<br />Organisation name: East Lancashire Hospitals NHS Trust"],"type":"scatter","mode":"markers+lines","marker":{"autocolorscale":false,"color":"rgba(218,41,28,1)","opacity":1,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(218,41,28,1)"}},"hoveron":"points","name":"East Lancashire Hospitals NHS Trust","legendgroup":"East Lancashire Hospitals NHS Trust","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","line":{"width":1.8897637795275593,"color":"rgba(218,41,28,1)","dash":"solid"},"frame":null},{"x":[18992,19023,19051,19082,19112,19143,19173,19204,19235,19265,19296,19326,19357,19388,19416,19447,19477,19508],"y":[8135.4976699999997,8166.2964700000002,8159.7352099999998,8168.3528399999996,8129.8871200000003,8159.5408500000003,8203.6547599999994,8273.5082500000008,8297.9957699999995,8398.3759399999999,8484.8462299999992,8623.9725500000004,8603.4061500000007,8682.8475999999991,8737.06005,8796.3252200000006,8800.8645300000007,8785.5438300000005],"text":["date: 2021-12-31<br />count: 8135.498<br />Organisation name: Lancashire Teaching Hospitals NHS Foundation Trust","date: 2022-01-31<br />count: 8166.296<br />Organisation name: Lancashire Teaching Hospitals NHS Foundation Trust","date: 2022-02-28<br />count: 8159.735<br />Organisation name: Lancashire Teaching Hospitals NHS Foundation Trust","date: 2022-03-31<br />count: 8168.353<br />Organisation name: Lancashire Teaching Hospitals NHS Foundation Trust","date: 2022-04-30<br />count: 8129.887<br />Organisation name: Lancashire Teaching Hospitals NHS Foundation Trust","date: 2022-05-31<br />count: 8159.541<br />Organisation name: Lancashire Teaching Hospitals NHS Foundation Trust","date: 2022-06-30<br />count: 8203.655<br />Organisation name: Lancashire Teaching Hospitals NHS Foundation Trust","date: 2022-07-31<br />count: 8273.508<br />Organisation name: Lancashire Teaching Hospitals NHS Foundation Trust","date: 2022-08-31<br />count: 8297.996<br />Organisation name: Lancashire Teaching Hospitals NHS Foundation Trust","date: 2022-09-30<br />count: 8398.376<br />Organisation name: Lancashire Teaching Hospitals NHS Foundation Trust","date: 2022-10-31<br />count: 8484.846<br />Organisation name: Lancashire Teaching Hospitals NHS Foundation Trust","date: 2022-11-30<br />count: 8623.973<br />Organisation name: Lancashire Teaching Hospitals NHS Foundation Trust","date: 2022-12-31<br />count: 8603.406<br />Organisation name: Lancashire Teaching Hospitals NHS Foundation Trust","date: 2023-01-31<br />count: 8682.848<br />Organisation name: Lancashire Teaching Hospitals NHS Foundation Trust","date: 2023-02-28<br />count: 8737.060<br />Organisation name: Lancashire Teaching Hospitals NHS Foundation Trust","date: 2023-03-31<br />count: 8796.325<br />Organisation name: Lancashire Teaching Hospitals NHS Foundation Trust","date: 2023-04-30<br />count: 8800.865<br />Organisation name: Lancashire Teaching Hospitals NHS Foundation Trust","date: 2023-05-31<br />count: 8785.544<br />Organisation name: Lancashire Teaching Hospitals NHS Foundation Trust"],"type":"scatter","mode":"markers+lines","marker":{"autocolorscale":false,"color":"rgba(0,150,57,1)","opacity":1,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,150,57,1)"}},"hoveron":"points","name":"Lancashire Teaching Hospitals NHS Foundation Trust","legendgroup":"Lancashire Teaching Hospitals NHS Foundation Trust","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","line":{"width":1.8897637795275593,"color":"rgba(0,150,57,1)","dash":"solid"},"frame":null}],"layout":{"margin":{"t":26.228310502283104,"r":7.3059360730593621,"b":40.182648401826491,"l":25.570776255707766},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[18966.200000000001,19533.799999999999],"tickmode":"array","ticktext":["2022-01","2022-07","2023-01"],"tickvals":[18993,19174,19358],"categoryorder":"array","categoryarray":["2022-01","2022-07","2023-01"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"FTE staff","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,8850.2505999999994],"tickmode":"array","ticktext":[""],"tickvals":[1],"categoryorder":"array","categoryarray":[""],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"count","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"Organisation name","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"564f36cde48d1":{"x":{},"y":{},"colour":{},"type":"scatter"},"564f373a1ed4b":{"x":{},"y":{},"colour":{}}},"cur_data":"564f36cde48d1","visdat":{"564f36cde48d1":["function (y) ","x"],"564f373a1ed4b":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="table" class="level2">
+<h2 class="anchored" data-anchor-id="table">Table</h2>
+<p>The table below shows the total number of doctors and nurses for each organisation within Lancashire and South Cumbria. We can see that the organisation with the most midwives is the <em>East Lancashire Hospitals NHS Trust</em> with 253 staff.</p>
+<div class="cell">
+<div class="cell-output-display">
+
+<div class="reactable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-49661a3babc271c095de" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-49661a3babc271c095de">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Organisation name":["All","Blackpool Teaching Hospitals NHS Foundation Trust","East Lancashire Hospitals NHS Trust","Lancashire and South Cumbria NHS Foundation Trust","Lancashire Teaching Hospitals NHS Foundation Trust","NHS Lancashire and South Cumbria ICB","University Hospitals of Morecambe Bay NHS Foundation Trust"],"Total":[38605.0133,7357.3597,8850.2506,6735.36317,8785.54383,455.15589,6421.34011],"HCHS Doctors":[3443.74416,628.2915,907.14654,279.05739,984.87709,7.37774,636.9939],"Nurses & health visitors":[10824.51584,2144.58457,2306.94006,2077.23037,2369.81335,35.40667,1890.54082],"Midwives":[653.72807,86.33999,252.74,0,175.89468,0,138.7534],"Ambulance staff":[6.46667,0,1,0,2.8,0,2.66667]},"columns":[{"id":"Organisation name","name":"Organisation name","type":"character","format":{"cell":{"digits":0},"aggregated":{"digits":0}},"minWidth":140},{"id":"Total","name":"Total","type":"numeric","format":{"cell":{"digits":0},"aggregated":{"digits":0}}},{"id":"HCHS Doctors","name":"HCHS Doctors","type":"numeric","format":{"cell":{"digits":0},"aggregated":{"digits":0}}},{"id":"Nurses & health visitors","name":"Nurses & health visitors","type":"numeric","format":{"cell":{"digits":0},"aggregated":{"digits":0}}},{"id":"Midwives","name":"Midwives","type":"numeric","format":{"cell":{"digits":0},"aggregated":{"digits":0}}},{"id":"Ambulance staff","name":"Ambulance staff","type":"numeric","format":{"cell":{"digits":0},"aggregated":{"digits":0}}}],"highlight":true,"bordered":true,"style":{"fontSize":"0.8rem"},"dataKey":"a938dc254145bbf42a1931587283f07d"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
